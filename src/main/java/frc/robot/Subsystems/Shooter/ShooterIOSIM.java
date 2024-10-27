@@ -25,7 +25,7 @@ public class ShooterIOSIM implements ShooterIO{
 
         ShooterMotor.setInverted(true);
         FeederMotor.setInverted(true);
-
+        
         ShooterVoltage = new VoltageOut(0.0);
         FeederVoltage = new VoltageOut(0.0);
     }

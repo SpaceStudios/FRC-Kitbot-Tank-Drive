@@ -32,6 +32,7 @@ public class RobotContainer {
             () -> modifyJoystick(controller.getRightX())));
         controller.rightTrigger().whileTrue(new ShooterExecute(-1*Constants.ShooterStrength, Shooter)).whileTrue(new FeederExecute(-1*Constants.ShooterStrength, Shooter));
         controller.leftTrigger().whileTrue(new FeederExecute(1, Shooter));
+        controller.b().whileTrue(new ShooterExecute(-1*Constants.ShooterStrength, Shooter));
         break;
       case cursedController:
         drivetrainSubsystem.setDefaultCommand(
