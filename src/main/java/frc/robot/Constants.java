@@ -50,4 +50,5 @@ public class Constants {
     // Shooter Constants
     public static final int FeederID = 11;
     public static final int ShooterMotorID = 12;
+    public static final double ShooterStrength = 1;
 }
