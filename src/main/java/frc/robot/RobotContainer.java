@@ -9,6 +9,8 @@ import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.Subsystems.Drivetrain.DrivetrainSubsystem;
 import frc.robot.Subsystems.Shooter.ShooterSubsystem;
+import frc.robot.Subsystems.Shooter.Commands.FeederExecute;
+import frc.robot.Subsystems.Shooter.Commands.ShooterExecute;
 
 public class RobotContainer {
   public RobotContainer() {
@@ -28,6 +30,8 @@ public class RobotContainer {
           drivetrainSubsystem.setVoltagesArcadeCommand(
             () -> modifyJoystick(-controller.getLeftY()),
             () -> modifyJoystick(controller.getRightX())));
+        controller.rightTrigger().whileTrue(new ShooterExecute(-1, Shooter));
+        controller.leftTrigger().whileTrue(new FeederExecute(-1, Shooter));
         break;
       case cursedController:
         drivetrainSubsystem.setDefaultCommand(

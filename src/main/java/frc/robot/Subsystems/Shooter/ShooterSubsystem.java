@@ -12,6 +12,8 @@ public class ShooterSubsystem extends SubsystemBase {
   /** Creates a new ShooterSubsystem. */
   ShooterIO io;
   CommandXboxController controller = new CommandXboxController(0);
+  
+
   public ShooterSubsystem() {
     switch (Constants.currentMode) {
       case REAL:
