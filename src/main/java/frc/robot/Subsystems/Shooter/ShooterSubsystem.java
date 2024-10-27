@@ -23,7 +23,9 @@ public class ShooterSubsystem extends SubsystemBase {
       case REAL:
         io = new ShooterIOSparkMax();
         break;
-    
+      case SIM:
+        io = new ShooterIOSIM();
+        break;
       default:
         break;
     }
