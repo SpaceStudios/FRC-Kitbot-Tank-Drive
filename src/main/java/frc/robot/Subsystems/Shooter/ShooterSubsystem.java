@@ -4,15 +4,19 @@
 
 package frc.robot.Subsystems.Shooter;
 
+import org.littletonrobotics.junction.Logger;
+
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.Constants;
+import frc.robot.Main;
+import frc.robot.Subsystems.Shooter.ShooterIO.ShooterData;
 
 public class ShooterSubsystem extends SubsystemBase {
   /** Creates a new ShooterSubsystem. */
   ShooterIO io;
   CommandXboxController controller = new CommandXboxController(0);
-  
+  ShooterData MainData = new ShooterData();
 
   public ShooterSubsystem() {
     switch (Constants.currentMode) {
@@ -36,5 +40,10 @@ public class ShooterSubsystem extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+    io.getData(MainData);
+    Logger.recordOutput("Shooter Speed", MainData.ShooterVelocity);
+    Logger.recordOutput("Shooter Output Volts", MainData.ShooterOutput);
+    Logger.recordOutput("Feeder Speed", MainData.FeederVelocity);
+    Logger.recordOutput("Feeder Output Volts", MainData.FeederOutput);
   }
 }
