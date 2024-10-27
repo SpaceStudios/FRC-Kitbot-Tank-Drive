@@ -59,5 +59,4 @@ public class ShooterIOSIM implements ShooterIO{
         data.FeederTemp = 0.0;
         data.FeederVelocity = 0.0;
     }
-
 }
