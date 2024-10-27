@@ -30,8 +30,8 @@ public class RobotContainer {
           drivetrainSubsystem.setVoltagesArcadeCommand(
             () -> modifyJoystick(-controller.getLeftY()),
             () -> modifyJoystick(controller.getRightX())));
-        controller.rightTrigger().whileTrue(new ShooterExecute(-1, Shooter));
-        controller.leftTrigger().whileTrue(new FeederExecute(-1, Shooter));
+        controller.rightTrigger().whileTrue(new ShooterExecute(-1, Shooter)).whileTrue(new FeederExecute(1, Shooter));
+        controller.leftTrigger().whileTrue(new FeederExecute(1, Shooter));
         break;
       case cursedController:
         drivetrainSubsystem.setDefaultCommand(
