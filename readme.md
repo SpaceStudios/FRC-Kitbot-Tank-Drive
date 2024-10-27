@@ -16,9 +16,14 @@ Customizable Drive Train, Shooting System and Mode Switcher.
 ### Supported Shooter/Feeder Motor Controllers:
  - Sparkmax
 
-## Requirements
+## Requirements:
  - WPILIB
  - Advantage Scope for 3d/2d Simulation of Robot
 
 ## Important Notices:
  - This program uses code from WPILIB see WPILib-License.md for allowed redistribution. 
+
+## Other Things:
+**Picture of Cheese this Program is named after**
+
+<img src="https://i0.wp.com/cheesescientist.com/wp-content/uploads/2023/03/Brunost.jpg" width="400" height="300"/>
