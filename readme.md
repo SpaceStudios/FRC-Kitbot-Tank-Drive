@@ -4,7 +4,7 @@
 
 ## Features:
 Customizable Drive Train, Shooting System and Mode Switcher.
-### Drive Train Motors:
+### Supported Drive Train Motor Controllers:
  - TalonFX
  - TalonSRX
  - Sparkmax
@@ -13,7 +13,7 @@ Customizable Drive Train, Shooting System and Mode Switcher.
  - Robot
  - Simulator
 
-### Shooter/Feeder Motors:
+### Supported Shooter/Feeder Motor Controllers:
  - Sparkmax
 
 ## Requirements
