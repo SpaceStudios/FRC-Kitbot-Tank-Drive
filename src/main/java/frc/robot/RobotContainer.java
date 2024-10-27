@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.Subsystems.Drivetrain.DrivetrainSubsystem;
+import frc.robot.Subsystems.Shooter.ShooterSubsystem;
 
 public class RobotContainer {
   public RobotContainer() {
@@ -48,6 +49,7 @@ public class RobotContainer {
   CommandXboxController controller = new CommandXboxController(0);
 
   DrivetrainSubsystem drivetrainSubsystem = new DrivetrainSubsystem();
+  ShooterSubsystem Shooter = new ShooterSubsystem();
 
   private double modifyJoystick(double in) {
     if (Math.abs(in) < 0.05) {
