@@ -1,6 +1,6 @@
 # Brunost Kitbot Program
 **Made for Blue Cheese Robotics FRC 1086**
-**Current Version: 1.0**
+**Current Version: 1.0.1**
 
 ## Features:
 Customizable Drive Train, Shooting System and Mode Switcher.
@@ -15,6 +15,12 @@ Customizable Drive Train, Shooting System and Mode Switcher.
 
 ### Supported Shooter/Feeder Motor Controllers:
  - Sparkmax
+
+## Change Log:
+### Version 1.0.1
+**Fixed TalonFX Voltage setting Issue**
+
+TalonFX.set() -> TalonFX.setVoltage()
 
 ## Requirements:
  - WPILIB

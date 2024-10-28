@@ -32,10 +32,10 @@ public class driveTrainIOTalonFX implements DrivetrainIO{
     @Override
     public void setVolts(double left, double right) {
         // TODO Auto-generated method stub
-        TalonLF.set(left);
-        TalonLB.set(left);
-        TalonRF.set(right);
-        TalonRB.set(right);
+        TalonLF.setVoltage(left);
+        TalonLB.setVoltage(left);
+        TalonRF.setVoltage(right);
+        TalonRB.setVoltage(right);
     }
 
 }
