@@ -1,6 +1,6 @@
 # Brunost Kitbot Program
 **Made for Blue Cheese Robotics FRC 1086**
-**Current Version: 1.0.1**
+**Current Version: 1.0.2**
 
 ## Features:
 Customizable Drive Train, Shooting System and Mode Switcher.
