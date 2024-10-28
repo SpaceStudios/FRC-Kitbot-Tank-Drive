@@ -4,7 +4,7 @@
 **Current Version: 1.0.2**
 
 ## Features:
-Customizable Drive Train, Shooting System and Mode Switcher.
+Customizable Drive Train, Shooting Subsystem and Mode Switcher.
 ### Supported Drive Train Motor Controllers:
  - TalonFX
  - TalonSRX
@@ -29,7 +29,7 @@ TalonFX.set() -> TalonFX.setVoltage()
 
 ## Requirements:
  - WPILIB
- - Advantage Scope for 3d/2d Simulation of Robot
+ - Advantage Scope for 2D/3D Simulation of a Kitbot Robot Drivetrain, and simulation of a shooter.
 
 ## Important Notices:
  - This program uses code from WPILIB see WPILib-License.md for allowed redistribution. 
