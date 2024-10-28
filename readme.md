@@ -17,6 +17,10 @@ Customizable Drive Train, Shooting System and Mode Switcher.
  - Sparkmax
 
 ## Change Log:
+### Brunost v1.0.2
+
+**Added the ability for Sparkmaxes to give data about output current and temperature**
+
 ### Version 1.0.1
 **Fixed TalonFX Voltage setting Issue**
 

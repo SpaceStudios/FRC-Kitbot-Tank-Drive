@@ -38,21 +38,25 @@ public class ShooterIOSparkMax implements ShooterIO{
     }
     @Override
     public void setFeederVolts(double volts) {
-        // TODO Auto-generated method stub
         Feeder.setVoltage(volts);
     }
     @Override
     public void setShooterVolts(double volts) {
-        // TODO Auto-generated method stub
         Shooter.setVoltage(volts);
     }
     @Override
     public void getData(ShooterData data) {
-        // TODO Auto-generated method stub
         data.ShooterVelocity = ShooterEncoder.getVelocity();
         data.FeederVelocity = FeederEncoder.getVelocity();
+
         data.ShooterOutput = Shooter.getAppliedOutput();
         data.FeederOutput = Feeder.getAppliedOutput();
+
+        data.ShooterAMPs = Shooter.getOutputCurrent();
+        data.FeederAMPs = Feeder.getOutputCurrent();
+
+        data.ShooterTemp = Shooter.getMotorTemperature();
+        data.FeederTemp = Feeder.getMotorTemperature();
     }
 
 }

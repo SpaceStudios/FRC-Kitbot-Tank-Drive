@@ -37,7 +37,7 @@ public class Robot extends LoggedRobot {
     // Logger.getInstance().disableDeterministicTimestamps() // See "Deterministic Timestamps" in the "Understanding Data Flow" page
     // Start logging! No more data receivers, replay sources, or metadata values may be added.
     System.out.println("////////////////////");
-    System.out.println("// Brunost V1.0.1 //");
+    System.out.println("// Brunost V1.0.2 //");
     System.out.println("////////////////////");
     switch (Constants.currentMode) {
       case REAL:

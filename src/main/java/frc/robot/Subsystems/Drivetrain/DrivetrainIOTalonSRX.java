@@ -31,7 +31,6 @@ public class DrivetrainIOTalonSRX implements DrivetrainIO {
 
     @Override
     public void updateInputs(DrivetrainIOInputs inputs) {
-        // TODO Auto-generated method stub
         inputs.leftOutputVolts = TalonLF.getMotorOutputVoltage();
         inputs.leftTempCelsius = new double[] {(TalonLF.getTemperature())};
         inputs.leftCurrentAmps = new double[] {(TalonLF.getSupplyCurrent())};
@@ -42,7 +41,6 @@ public class DrivetrainIOTalonSRX implements DrivetrainIO {
 
     @Override
     public void setVolts(double left, double right) {
-        // TODO Auto-generated method stub
         TalonLF.set(TalonSRXControlMode.PercentOutput, left/RobotController.getInputVoltage());
         TalonLB.set(TalonSRXControlMode.PercentOutput, left/RobotController.getInputVoltage());
         TalonRF.set(TalonSRXControlMode.PercentOutput, right/RobotController.getInputVoltage());
