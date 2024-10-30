@@ -20,7 +20,7 @@ Customizable Drive Train, Shooting Subsystem and Mode Switcher.
 ## Change Log:
 ### Brunost v1.1.0
 
-**Added Monty Code
+**Added Monty Code**
 
 ### Brunost v1.0.2
 
