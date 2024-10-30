@@ -53,11 +53,17 @@ public class Constants {
     public static final double ShooterStrength = 0.5;
 
     //Monty Constants
-    public static final int FeederMotorID = 11;
-    public static final int LeftFeederID = 12;
-    public static final int RightFeederID = 13;
+    public static final int MainIntakeID = 11;
+    public static final int LeftIntakeID = 12;
+    public static final int RightIntakeID = 13;
 
-    public static final int LeftShooterID = 21;
-    public static final int RightShooterID = 22;
-    public static final int FeederShooterID = 23;
+    public static final int LeftLauncherID = 21;
+    public static final int RightLauncherID = 22;
+    public static final int MainFeederID = 23;
+
+    public static final int HoodID = 9;
+    public static final int IntakeID = 8;
+    public static final double IntakeForce = 0.5;
+    public static final double FeederForce = 1;
+    public static final double LauncherForce = 0.5;
 }
