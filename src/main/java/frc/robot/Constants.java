@@ -58,5 +58,6 @@ public class Constants {
     public static final int RightFeederID = 13;
 
     public static final int LeftShooterID = 21;
-    
+    public static final int RightShooterID = 22;
+    public static final int FeederShooterID = 23;
 }
