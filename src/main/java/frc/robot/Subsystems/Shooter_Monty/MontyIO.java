@@ -25,5 +25,7 @@ public interface MontyIO {
     public abstract void setFeederVolts(double volts);
     public abstract void setIntakeVolts(double volts);
     public abstract void setLaunchVolts(double volts);
+    public abstract boolean getIntakeState();
+    public abstract boolean getHoodState();
     public abstract void getData(MontyIOData data);
 }

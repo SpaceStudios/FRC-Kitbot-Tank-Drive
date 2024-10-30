@@ -83,6 +83,14 @@ public class MontyIO_Main implements MontyIO {
         LeftLauncher.set(volts*Constants.LauncherForce);
     }
 
+    public boolean getHoodState() {
+        return Hood.get();
+    }
+
+    public boolean getIntakeState() {
+        return Intake.get();
+    }
+
     @Override
     public void getData(MontyIOData data) {
         data.LauncherVolts = LeftLauncher.getMotorVoltage().getValueAsDouble();

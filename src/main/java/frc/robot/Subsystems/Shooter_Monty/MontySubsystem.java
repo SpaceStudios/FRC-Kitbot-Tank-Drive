@@ -30,6 +30,22 @@ public class MontySubsystem extends SubsystemBase {
     io.setIntakeVolts(volts);
   }
 
+  public void setIntakeState(boolean newState) {
+    io.setIntakeState(newState);
+  }
+
+  public void setHoodState(boolean newState) {
+    io.setHoodState(newState);
+  }
+
+  public boolean getIntakeState() {
+    return io.getIntakeState();
+  }
+
+  public boolean getHoodState() {
+    return io.getHoodState();
+  }
+
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
