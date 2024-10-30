@@ -104,5 +104,4 @@ public class MontyIO_Main implements MontyIO {
         data.intakeState = Intake.get();
         data.hoodState = Hood.get();
     }
-
 }
