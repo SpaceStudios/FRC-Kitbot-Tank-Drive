@@ -51,4 +51,12 @@ public class Constants {
     public static final int FeederID = 11;
     public static final int ShooterMotorID = 12;
     public static final double ShooterStrength = 0.5;
+
+    //Monty Constants
+    public static final int FeederMotorID = 11;
+    public static final int LeftFeederID = 12;
+    public static final int RightFeederID = 13;
+
+    public static final int LeftShooterID = 21;
+    
 }
