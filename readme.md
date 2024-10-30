@@ -1,7 +1,7 @@
 # Brunost Kitbot Program
 **Made for Blue Cheese Robotics FRC 1086**
 
-**Current Version: 1.0.2**
+**Current Version: 1.1.0**
 
 ## Features:
 Customizable Drive Train, Shooting Subsystem and Mode Switcher.
@@ -18,6 +18,10 @@ Customizable Drive Train, Shooting Subsystem and Mode Switcher.
  - Sparkmax
 
 ## Change Log:
+### Brunost v1.1.0
+
+**Added Monty Code
+
 ### Brunost v1.0.2
 
 **Added the ability for Sparkmaxes to give data about output current and temperature**
