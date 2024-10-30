@@ -47,6 +47,13 @@ public class Constants {
         cursedController
     }
 
+    public static enum RobotType {
+        Kitbot,
+        Monty
+    }
+
+    public static final RobotType CurrentType = RobotType.Monty;
+
     // Shooter Constants
     public static final int FeederID = 11;
     public static final int ShooterMotorID = 12;
