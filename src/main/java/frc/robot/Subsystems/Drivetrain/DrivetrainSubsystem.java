@@ -6,6 +6,7 @@ package frc.robot.Subsystems.Drivetrain;
 
 import java.util.function.DoubleSupplier;
 
+import org.bluecheese.betterLogger;
 import org.littletonrobotics.junction.Logger;
 
 import com.ctre.phoenix6.controls.VoltageOut;
@@ -14,6 +15,7 @@ import com.revrobotics.CANSparkLowLevel.MotorType;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.RelativeEncoder;
 
+import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.kinematics.DifferentialDriveOdometry;
 import edu.wpi.first.math.util.Units;
@@ -83,6 +85,8 @@ public class DrivetrainSubsystem extends SubsystemBase {
         .plus(Rotation2d.fromRadians((inputs.leftVelocityMetersPerSecond - inputs.rightVelocityMetersPerSecond)
             * 0.020 / Units.inchesToMeters(26))),
     inputs.leftPositionMeters, inputs.rightPositionMeters);
-    Logger.getInstance().recordOutput("Drivebase Pose", odometry.getPoseMeters());
+    Logger.recordOutput("Drivebase Pose", odometry.getPoseMeters());
+    betterLogger.Log("/Robot", "/Random Value","Test", Math.random());
+    betterLogger.Log("/Robot", "/DriveTrain","Drivetrain pose", odometry.getPoseMeters());
   }
 }

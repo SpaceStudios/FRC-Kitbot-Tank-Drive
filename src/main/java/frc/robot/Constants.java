@@ -52,7 +52,7 @@ public class Constants {
         Monty
     }
 
-    public static final RobotType CurrentType = RobotType.Monty;
+    public static final RobotType CurrentType = RobotType.Kitbot;
 
     // Shooter Constants
     public static final int FeederID = 11;
