@@ -8,7 +8,10 @@ import java.util.function.DoubleSupplier;
 
 import org.littletonrobotics.junction.Logger;
 
+import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
+import edu.wpi.first.math.kinematics.ChassisSpeeds;
+import edu.wpi.first.math.kinematics.DifferentialDriveKinematics;
 import edu.wpi.first.math.kinematics.DifferentialDriveOdometry;
 import edu.wpi.first.math.util.Units;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
@@ -23,6 +26,7 @@ public class DrivetrainSubsystem extends SubsystemBase {
 
   DrivetrainIOInputsAutoLogged inputs = new DrivetrainIOInputsAutoLogged();
   DifferentialDriveOdometry odometry = new DifferentialDriveOdometry(new Rotation2d(), 0, 0);
+  DifferentialDriveKinematics kinematics = new DifferentialDriveKinematics(0.5);
 
   private void setVoltages(double left, double right) {
     io.setVolts(left, right);
@@ -61,6 +65,22 @@ public class DrivetrainSubsystem extends SubsystemBase {
       case REPLAY:
         break;
     }
+  }
+
+  public Pose2d getPose2d() {
+    return odometry.getPoseMeters();
+  }
+
+  public void resetPose2d(Pose2d newPose) {
+    odometry.resetPosition(new Rotation2d(), 0, 0, newPose);
+  }
+
+  public ChassisSpeeds getCurrentSpeeds() {
+    return new ChassisSpeeds((inputs.leftVelocityMetersPerSecond+inputs.rightVelocityMetersPerSecond)/2, 0, inputs.leftVelocityMetersPerSecond - inputs.rightVelocityMetersPerSecond);
+  }
+
+  public void driveBasedOnChassisSpeeds(ChassisSpeeds setCurrentSpeeds) {
+
   }
 
   @Override
