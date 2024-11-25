@@ -8,12 +8,6 @@ import java.util.function.DoubleSupplier;
 
 import org.littletonrobotics.junction.Logger;
 
-import com.ctre.phoenix6.controls.VoltageOut;
-import com.ctre.phoenix6.hardware.TalonFX;
-import com.revrobotics.CANSparkLowLevel.MotorType;
-import com.revrobotics.CANSparkMax;
-import com.revrobotics.RelativeEncoder;
-
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.kinematics.DifferentialDriveOdometry;
 import edu.wpi.first.math.util.Units;
@@ -29,9 +23,6 @@ public class DrivetrainSubsystem extends SubsystemBase {
 
   DrivetrainIOInputsAutoLogged inputs = new DrivetrainIOInputsAutoLogged();
   DifferentialDriveOdometry odometry = new DifferentialDriveOdometry(new Rotation2d(), 0, 0);
-
-  VoltageOut leftVoltage = new VoltageOut(0);
-  VoltageOut rightVoltage = new VoltageOut(0);
 
   private void setVoltages(double left, double right) {
     io.setVolts(left, right);
@@ -76,13 +67,13 @@ public class DrivetrainSubsystem extends SubsystemBase {
   public void periodic() {
     // This method will be called once per scheduler run
     io.updateInputs(inputs);
-    Logger.getInstance().processInputs("Drivetrain", inputs);
+    Logger.processInputs("Drivetrain", inputs);
     odometry.update(
     odometry.getPoseMeters().getRotation()
         // Use differential drive kinematics to find the rotation rate based on the wheel speeds and distance between wheels
         .plus(Rotation2d.fromRadians((inputs.leftVelocityMetersPerSecond - inputs.rightVelocityMetersPerSecond)
             * 0.020 / Units.inchesToMeters(26))),
     inputs.leftPositionMeters, inputs.rightPositionMeters);
-    Logger.getInstance().recordOutput("Drivebase Pose", odometry.getPoseMeters());
+    Logger.recordOutput("Drivebase Pose", odometry.getPoseMeters());
   }
 }
