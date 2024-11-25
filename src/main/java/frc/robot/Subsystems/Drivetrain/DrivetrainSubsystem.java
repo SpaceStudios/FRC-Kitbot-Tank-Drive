@@ -6,7 +6,6 @@ package frc.robot.Subsystems.Drivetrain;
 
 import java.util.function.DoubleSupplier;
 
-import org.bluecheese.betterLogger;
 import org.littletonrobotics.junction.Logger;
 
 import edu.wpi.first.math.geometry.Rotation2d;
