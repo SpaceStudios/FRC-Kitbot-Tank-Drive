@@ -8,12 +8,19 @@ import java.util.function.DoubleSupplier;
 
 import org.littletonrobotics.junction.Logger;
 
+import com.pathplanner.lib.auto.AutoBuilder;
+import com.pathplanner.lib.controllers.PPLTVController;
+import com.pathplanner.lib.util.ReplanningConfig;
+
+import edu.wpi.first.math.controller.LTVDifferentialDriveController;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.kinematics.ChassisSpeeds;
 import edu.wpi.first.math.kinematics.DifferentialDriveKinematics;
 import edu.wpi.first.math.kinematics.DifferentialDriveOdometry;
 import edu.wpi.first.math.util.Units;
+import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj.DriverStation.Alliance;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.Command;
 //import edu.wpi.first.wpilibj2.command.CommandBase;
@@ -65,6 +72,22 @@ public class DrivetrainSubsystem extends SubsystemBase {
       case REPLAY:
         break;
     }
+    
+    AutoBuilder.configureLTV(
+      this::getPose2d,
+      this::resetPose2d,
+      this::getCurrentSpeeds,
+      (speeds) -> this.driveBasedOnChassisSpeeds(speeds),
+      0.020,
+      new ReplanningConfig(),
+      () -> {
+        var currentAlliance = DriverStation.getAlliance();
+        if (currentAlliance.isPresent()) {
+          return currentAlliance.get() == DriverStation.Alliance.Red;
+        }
+        return false;
+      },
+      this);
   }
 
   public Pose2d getPose2d() {
@@ -80,7 +103,7 @@ public class DrivetrainSubsystem extends SubsystemBase {
   }
 
   public void driveBasedOnChassisSpeeds(ChassisSpeeds setCurrentSpeeds) {
-
+    
   }
 
   @Override
