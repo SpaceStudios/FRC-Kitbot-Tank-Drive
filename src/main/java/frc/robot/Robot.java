@@ -4,6 +4,8 @@
 
 package frc.robot;
 
+import org.bluecheese.betterLogger;
+import org.bluecheese.betterLogger.LogMode;
 import org.littletonrobotics.junction.LogFileUtil;
 import org.littletonrobotics.junction.LoggedRobot;
 import org.littletonrobotics.junction.Logger;
@@ -43,9 +45,11 @@ public class Robot extends LoggedRobot {
       case REAL:
         Logger.addDataReceiver(new WPILOGWriter("/media/sda1/")); 
         Logger.addDataReceiver(new NT4Publisher());
+        betterLogger.Start(LogMode.ROBOT);
         break;
       case SIM:
         Logger.addDataReceiver(new NT4Publisher());
+        betterLogger.Start(LogMode.SIMULATOR);
         break;
       case REPLAY:
         setUseTiming(false); 
@@ -53,6 +57,7 @@ public class Robot extends LoggedRobot {
         Logger.setReplaySource(new WPILOGReader(logPath));
         Logger.addDataReceiver(new WPILOGWriter(LogFileUtil.addPathSuffix(logPath, "_sim")));
         break;
+      
     }
     Logger.start();
     m_robotContainer = new RobotContainer();

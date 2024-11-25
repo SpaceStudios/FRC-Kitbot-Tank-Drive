@@ -62,6 +62,12 @@
         },
         "open": true
       },
+      "Robot": {
+        "DriveTrain": {
+          "open": true
+        },
+        "open": true
+      },
       "Shuffleboard": {
         ".metadata": {
           "open": true

@@ -12,13 +12,13 @@ public class Constants {
     public static final int drivetrainRightFalconID = 1;
     // Spark IDs
     public static final int drivetrainLeftSparkID = 1;
-    public static final int drivetrainLeftFollowSparkID = 2;
-    public static final int drivetrainRightSparkID = 3;
+    public static final int drivetrainLeftFollowSparkID = 3;
+    public static final int drivetrainRightSparkID = 2;
     public static final int drivetrainRightFollowSparkID = 4;
     //Talon SRX IDs
     public static final int driveTrainLFTalon = 1;
-    public static final int driveTrainLBTalon = 2;
-    public static final int driveTrainRFTalon = 3;
+    public static final int driveTrainLBTalon = 3;
+    public static final int driveTrainRFTalon = 2;
     public static final int driveTrainRBTalon = 4;
 
     public static final Mode currentMode = Mode.SIM;
@@ -52,7 +52,7 @@ public class Constants {
         Monty
     }
 
-    public static final RobotType CurrentType = RobotType.Monty;
+    public static final RobotType CurrentType = RobotType.Kitbot;
 
     // Shooter Constants
     public static final int FeederID = 11;
