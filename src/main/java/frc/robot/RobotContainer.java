@@ -75,7 +75,7 @@ public class RobotContainer {
 
   DrivetrainSubsystem drivetrainSubsystem = new DrivetrainSubsystem();
   ShooterSubsystem Shooter = new ShooterSubsystem();
-  MontySubsystem Monty = new MontySubsystem(new PneumaticHub(31));
+  MontySubsystem Monty = null;
 
   private double modifyJoystick(double in) {
     if (Math.abs(in) < 0.05) {
